@@ -1,5 +1,6 @@
 ﻿#include "stdafx.h"
 #include "system.h"
+#include "GraphicsEngine.h"
 
 HWND g_hWnd = NULL;// ウィンドウハンドル
 
@@ -13,6 +14,7 @@ LRESULT CALLBACK MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
   switch (msg)
   {
   case WM_DESTROY:
+    delete g_engine;
     PostQuitMessage(0);
     break;
   default:
@@ -64,12 +66,18 @@ void InitWindow(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, 
 
 }
 
+// ゲームの初期化
 void InitGame(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow, const TCHAR* appName)
 {
   // ウィンドウを初期化
   InitWindow(hInstance, hPrevInstance, lpCmdLine, nCmdShow, appName);
+  
+  // TKエンジンの初期化
+  g_engine = new TkEngine;
+  g_engine->Init(g_hWnd, FRAME_BUFFER_W, FRAME_BUFFER_H);
 }
 
+// ウィンドウメッセージをディスパッチ
 bool DispatchWindowMessage()
 {
   MSG msg = { 0 };

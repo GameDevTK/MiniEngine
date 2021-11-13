@@ -18,6 +18,15 @@
     <ClCompile Include="system.cpp">
       <Filter>App</Filter>
     </ClCompile>
+    <ClCompile Include="GraphicsEngine.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderContext.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TkEngine.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -27,6 +36,15 @@
       <Filter>App</Filter>
     </ClInclude>
     <ClInclude Include="MiniEngine.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsEngine.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderContext.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="TkEngine.h">
       <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>

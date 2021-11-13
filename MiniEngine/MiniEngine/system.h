@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+class GraphicsEngine;
 extern HWND g_hWnd;
 
 // ゲームの初期化
